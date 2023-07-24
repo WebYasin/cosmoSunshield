@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminLogin as AdminLogin;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Admin Login controller
+Route::get('admin_console',[AdminLogin::class,'index']);
+Route::post('admin_console/verify_',[AdminLogin::class,'verify']);
+
