@@ -1,0 +1,11 @@
+
+select .ulfisrt{
+  color: #000;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+
+}
