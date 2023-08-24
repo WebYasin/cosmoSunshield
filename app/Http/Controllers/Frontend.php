@@ -199,4 +199,32 @@ class Frontend extends Controller
 
         return view('frontend.sustainability',$data);
     }
+
+    function searchData()
+    {
+        		if($_POST['search'])
+		{
+
+			 $all_blogs      = DB::table('blogs')
+             ->where('status','=',1)
+             ->where('name', 'like', '%'.$_POST['search'].'%')
+             ->orderBy('publish_date','DESC')->get();
+
+			if($all_blogs)
+				{
+					foreach ($all_blogs as  $blogs) {
+
+						$link = url('blog-details/'.$blogs->slug);
+                        echo '<li><a href="'.$link.'">'.$blogs->title.'</span></a></li>';
+
+					}
+				}
+
+
+		}else{
+			echo '<li>No record found</li>';
+		}
+
+    }
+    // end here
 }

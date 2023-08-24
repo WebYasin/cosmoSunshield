@@ -90,3 +90,33 @@ jQuery(document).ready(function($){
 
 
     })
+
+
+$(document).on('keyup',"#search",function(){
+    let search = $(this).val();
+    var base = $('#base').data('base');
+    if(search)
+    {
+
+        $.ajax({
+        url:    base+'searchData',
+        method:   "POST",
+        data:   {search:search},
+        success:function(res){
+           if(res)
+           {
+                $('#searchingData').removeClass('d-none');
+                $('#searchingData').html(res);
+
+           }else{
+              $('#searchingData').addClass('d-none');
+           }
+        }
+    });
+
+
+
+    }else{
+        $('#searchingData').addClass('d-none');
+    }
+})

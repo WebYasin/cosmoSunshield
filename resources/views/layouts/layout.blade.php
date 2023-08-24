@@ -10,7 +10,7 @@ $wconfig                = websetting();
 <head>
 <meta charset="UTF-8">
 <title><?php echo $page_title; ?></title>
-<base href="<?php echo url(''); ?>/">
+<base href="<?php echo url(''); ?>/" data-base="<?php echo url(''); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="<?php echo config('app.CATALOG'); ?>images/favicon.ico" sizes="32x32" />

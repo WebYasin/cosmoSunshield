@@ -48,6 +48,7 @@ Route::get('manufacturing', [Frontend::class,'manufacturing']);
 Route::get('quality-assurance', [Frontend::class,'qualityAssurance']);
 Route::get('sustainability', [Frontend::class,'sustainability']);
 Route::get('join-our-dealer-network', [Frontend::class,'joinDealerNetwork']);
+Route::post('searchData', [Frontend::class,'searchData']);
 
 
 
