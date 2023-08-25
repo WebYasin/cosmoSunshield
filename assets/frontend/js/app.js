@@ -32,10 +32,35 @@ jQuery(document).ready(function($){
           slidesPerView: 2,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 4,
         },
       }
     });
+
+
+    //Product Slider Small
+    var productSwiperSmall = new Swiper(".product-slider.small", {
+      loop: false,
+      slidesPerView: 4,
+      spaceBetween: 50,
+      navigation: {
+          nextEl: ".product-next",
+          prevEl: ".product-prev",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+        900: {
+          slidesPerView: 4,
+        },
+      }
+    });
+
+
 
     //Video Popup
     const myModalAlternative = new bootstrap.Modal('#videoPopup')
@@ -130,7 +155,7 @@ jQuery(document).ready(function($){
       var base = $('#base').data('base');
       if(search)
       {
-  
+
           $.ajax({
           url:    base+'searchData',
           method:   "POST",
@@ -140,15 +165,15 @@ jQuery(document).ready(function($){
              {
                   $('#searchingData').removeClass('d-none');
                   $('#searchingData').html(res);
-  
+
              }else{
                 $('#searchingData').addClass('d-none');
              }
           }
       });
-  
-  
-  
+
+
+
       }else{
           $('#searchingData').addClass('d-none');
       }

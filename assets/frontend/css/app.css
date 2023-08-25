@@ -1519,3 +1519,23 @@ label.upload-btn svg {
     margin-right: 6px;
 }
 /**************Join network page css end********************/
+/**************Product page css start**********************/
+.product-block.small .img-box {
+    width: 100px;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+.product-block.small {
+    width: 100%;
+    padding: 0 0;
+}
+
+.product-block.small .content h3 {
+    font-size: 18px;
+}
+.scroll-position {
+    position: relative;
+    height: 1px;
+    bottom: 90px;
+}
+/**************Product page css end**********************/

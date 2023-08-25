@@ -55,6 +55,9 @@ Route::post('jobApplied', [Frontend::class,'jobApplied']);
 Route::post('joinDealer', [Frontend::class,'joinDealer']);
 Route::post('enquiry', [Frontend::class,'ContactEnquiry']);
 
+Route::get('products', [Frontend::class,'Product']);
+
+
 
 
 

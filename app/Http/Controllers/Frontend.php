@@ -120,6 +120,19 @@ class Frontend extends Controller
 
         return view('frontend.leadership',$data);
     }
+    function Product(Request $request){
+        $path = $request->path();
+        $data['fetch_banner']           = DB::table('front_menu')->where([['status',1],['link',$path]])->first();
+        $data['all_product']            = DB::table('product_category')->where(array('status'=>1))->orderBy('sort_order','ASC')->get();
+        $data['page_title']             = $data['fetch_banner']->metaTitle;
+        $data['metaTitle'] 			    = $data['fetch_banner']->metaTitle;
+   		$data['metaKeyword'] 		    = $data['fetch_banner']->metaKeyword;
+   		$data['metaDescription'] 	    = $data['fetch_banner']->metaDescription;
+        $data['noImage']                = $this->noImage;
+
+        return view('frontend.products',$data);
+    }
+
 
     function lifeAtCosmo(Request $request){
         $path = $request->path();
