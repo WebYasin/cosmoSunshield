@@ -51,11 +51,11 @@
             <div class="title">
                 <h2>Latest Blogs</h2>
             </div>
-            <div class="row g-5" data-cues="slideInUp">
+            <div class="row gx-sm-5" data-cues="slideInUp">
             <?php if(is_array($all_blogs) || is_object($all_blogs)){
                         foreach ($all_blogs as $blogs) {
                       ?>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-sm-6 col-12">
                     <div class="blog-block type2">
                         <div class="img-box">
                             <a href="<?php echo url('blog-details/'.$blogs->slug); ?>">

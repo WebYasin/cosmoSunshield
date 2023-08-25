@@ -15,44 +15,44 @@ class CommonModel extends Model
     public function insertData($table,$data=array())
 	{
 		return DB::table($table)->insert($data);
-   
+
 	}
 
 	public function updateData($table,$data =array(),$condition= array())
 	{
 			return DB::table($table)->where($condition)->update($data);
-				 
+
 	}
 
 	public function deleteData($table,$condition =array())
-	{	
+	{
 		return DB::table($table)->where($condition)->delete();
-		 
+
 	}
 
 
 	public function all_fetch($table,$condition= array(),$column = 'id',$sort_order = 'asc',$limit = NULL,$offset = NULL)
-	{		
+	{
              $result = DB::table($table)
                         ->where($condition)
                         ->orderBy($column,$sort_order)
                         // ->skip($offset)->take($limit)
                         ->get();
-             return   $result;     
+             return   $result;
 	}
 
 
 	public function allCount($table,$condition= array())
 	{
 		return DB::table($table)->where($condition)->count();
-				
+
 	}
 
     public function fs($table,$condition= array())
 	{
-	
+
         return   DB::table($table)->where($condition)->first();
-		
+
 	}
 
 
@@ -67,11 +67,11 @@ class CommonModel extends Model
 			   return false;
 		   }
 	   }
-	   
-	   
+
+
 	   function permission($url){
 	   $link = 'admin/'.$url;
-	   $row = $this->fs('menu',array('link'=>$link));    
+	   $row = $this->fs('menu',array('link'=>$link));
 	   $result = $this->hasPermission($row->id);
 		   if($result){
 			   return true;

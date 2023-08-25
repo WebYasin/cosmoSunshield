@@ -12,7 +12,7 @@
                         <p class="position"><?php echo $fetch_heading->designation1 ? $fetch_heading->designation1 :"";  ?></p>
                     </div>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-xl-4 col-lg-5 col-sm-7 col-12 mx-auto text-center">
                     <img src="<?php echo url($fetch_heading->image ? $fetch_heading->image : $noImage); ?>" class="img-fluid" alt="" />
                 </div>
             </div>

@@ -1,7 +1,7 @@
 @extends("layouts.layout")
 @section('page')
 <?php if($fetch_blog){ ?>
-    <section class="title-section">
+    <section class="title-section blog-detail">
         <img src="<?php echo url($fetch_blog->image ? $fetch_blog->image : $noImage); ?>" alt="banner" />
         <!--<div class="title-holder blog-detail">-->
         <!--    <div class="container">-->
@@ -12,7 +12,7 @@
     <?php } ?>
     <section class="section-space">
         <div class="container">
-            <div class="col-md-10 mx-auto">
+            <div class="col-xl-10 col-12 mx-auto">
                 <div class="blog-content">
                     <div class="title">
                         <h1><?php echo $fetch_blog->title ?$fetch_blog->title:""; ?></h1>
@@ -32,9 +32,12 @@
             </div>
             <div class="row g-5" data-cues="slideInUp">
             <?php if(is_array($all_related_blog) || is_object($all_related_blog)){
+                $i=0;
                         foreach ($all_related_blog as $blogs) {
+                            $i++;
+                            $class_name = count($all_related_blog) == $i ? 'd-lg-block d-sm-none d-block':"";
                       ?>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-sm-6 col-12 <?php echo $class_name ?>">
                     <div class="blog-block type2">
                         <div class="img-box">
                         <a href="<?php echo url('blog-details/'.$blogs->slug); ?>">

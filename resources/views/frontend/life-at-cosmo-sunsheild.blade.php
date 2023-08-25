@@ -3,12 +3,12 @@
 <?php if($fetch_heading){ ?>
     <section class="section-space pb-0 overflow-hidden">
         <div class="container">
-            <div class="title col-md-8 mx-auto text-center">
+            <div class="title col-xl-8 mx-auto text-center">
                 <h2><?php echo $fetch_heading->heading1 ? $fetch_heading->heading1 :"";  ?></h2>
                 <p><?php echo $fetch_heading->description1 ? $fetch_heading->description1 :"";  ?></p>
             </div>
             <div class="text-center">
-                <img src="<?php echo config('app.CATALOG'); ?>images/moon-curve.svg" alt="curve" />
+                <img src="<?php echo config('app.CATALOG'); ?>images/moon-curve.svg" alt="curve" class="img-fluid" />
             </div>
         </div>
     </section>
@@ -17,16 +17,16 @@
     <section class="section-space gray-bg">
         <div class="container">
             <div class="row justify-content-between align-items-center">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-7">
                     <div class="title text-center medium-desp ceo-message">
                         <h2><?php echo $fetch_heading->heading2 ? $fetch_heading->heading2 :"";  ?></h2>
                         <h3><?php echo $fetch_heading->heading2_1 ? $fetch_heading->heading2_1 :"";  ?></h3>
                         <p><?php echo $fetch_heading->description2 ? $fetch_heading->description2 :"";  ?></p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-sm-5">
                     <div class="full-image rounded-full">
-                        <img src="<?php echo url($fetch_heading->img2 ? $fetch_heading->img2 : $noImage); ?>" />
+                        <img src="<?php echo url($fetch_heading->img2 ? $fetch_heading->img2 : $noImage); ?>" class="" />
                     </div>
                     <div class="title medium-desp ceo-message text-center mt-3">
                         <p class="fs-20 text-color name"><?php echo $fetch_heading->name2 ? $fetch_heading->name2 :"";  ?></p>
@@ -47,7 +47,7 @@
 
             </div>
         </div>
-        <div class="ps-5">
+        <div class="ps-sm-5">
         <div class="swiper work-culture-slider">
             <div class="swiper-wrapper">
                 <?php
@@ -75,7 +75,7 @@
         </div>
     </section>
     <?php } ?>
-    <section class="section-space">
+    <section class="section-space pt-0">
         <div class="container">
             <div class="title col-md-6 mx-auto text-center">
             <h2><?php echo $fetch_heading->heading4 ? $fetch_heading->heading4 :"";  ?></h2>
@@ -91,14 +91,14 @@
                 <div class="col-md-12">
                     <div class="opening-block">
                         <div class="row align-items-center">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-12">
                                 <div class="position"><?php echo $jobs->title ? $jobs->title :"";  ?></div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="location text-center"><?php echo $jobs->location ? $jobs->location :"";  ?></div>
+                            <div class="col-md-4 col-12">
+                                <div class="location text-sm-center"><?php echo $jobs->location ? $jobs->location :"";  ?></div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="action text-end">
+                            <div class="col-md-4 col-12 mt-sm-0 mt-4">
+                                <div class="action text-sm-end">
                                     <a href="<?php echo url('job-details/'.$jobs->slug); ?>" class="btn">Apply Now</a>
                                 </div>
                             </div>

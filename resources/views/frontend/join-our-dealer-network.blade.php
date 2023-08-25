@@ -40,20 +40,18 @@
             <div class="title small px-xl-5">
                 <h2>Dealer Application Form</h2>
             </div>
-            @if(session()->has('success'))
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <strong> {{ session()->get('success') }}</strong> </a>
-            </div>
-            @endif
-
-            @if(session()->has('error'))
-            <div class="alert alert-danger">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <strong> {{ session()->get('error') }}</strong> </a>
-            </div>
-            @endif
             <form action="<?php echo url('joinDealer'); ?>" method="POST" enctype="multipart/form-data" class="px-xl-5">
+                @if(session()->has('success'))
+                <div class="alert alert-success">
+                    <strong> {{ session()->get('success') }}</strong> </a>
+                </div>
+                @endif
+
+                @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    <strong> {{ session()->get('error') }}</strong> </a>
+                </div>
+                @endif
                 @csrf
                 <div class="row">
                     <div class="col-md-12 mb-3">

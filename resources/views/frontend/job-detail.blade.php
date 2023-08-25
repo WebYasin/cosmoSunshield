@@ -22,19 +22,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="gray-bg p-5">
+                <div class="col-md-5 mt-sm-0 mt-4">
+                    <div class="gray-bg p-sm-5 p-4">
                         <p>Please use this form to apply for this position. LR HR will review your application and if shortlisted you will receive a call very soon.</p>
                         @if(session()->has('success'))
                         <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <strong> {{ session()->get('success') }}</strong> </a>
                         </div>
                         @endif
 
                         @if(session()->has('error'))
                         <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <strong> {{ session()->get('error') }}</strong> </a>
                         </div>
                         @endif

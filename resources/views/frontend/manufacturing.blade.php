@@ -17,20 +17,20 @@
     <section class="section-space">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <div class="title text-center">
                         <h2><?php echo $fetch_heading->heading1 ? $fetch_heading->heading1 :"";  ?></h2>
                         <p><?php echo $fetch_heading->description1 ? $fetch_heading->description1 :"";  ?></p>
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 justify-content-between align-items-center">
-                <div class="col-md-6">
+            <div class="row mt-sm-5 justify-content-between align-items-center">
+                <div class="col-lg-6">
                     <div class="title">
                     <h2><?php echo $fetch_heading->heading2 ? $fetch_heading->heading2 :"";  ?></h2>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-lg-5">
                 <p><?php echo $fetch_heading->description2 ? $fetch_heading->description2 :"";  ?></p>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                     foreach ($all_manufacturing as $manufacturing) {
 
             ?>
-            <div class="row justify-content-between mt-5 align-items-center">
-                <div class="col-md-4">
+            <div class="row justify-content-between mt-sm-5 align-items-center">
+                <div class="col-lg-4 col-sm-6 col-12 mb-sm-0 mb-4">
                     <div class="contact-info-detail">
                         <h4><?php echo $manufacturing->location ? $manufacturing->location :"";  ?></h4>
                         <h6><?php echo $manufacturing->name ? $manufacturing->name :"";  ?></h6>
@@ -49,7 +49,7 @@
                         <a href="tel:Ph: <?php echo $manufacturing->contact ? $manufacturing->contact :"";  ?> ">Ph: <?php echo $manufacturing->contact ? $manufacturing->contact :"";  ?> </a>
                     </div>
                 </div>
-                <div class="col-md-5 full-image">
+                <div class="col-lg-5 col-sm-6 col-12 full-image">
                     <img src="<?php echo url($manufacturing->image ? $manufacturing->image : $noImage); ?>" alt="<?php echo $manufacturing->location ? $manufacturing->location :"";  ?>" />
                 </div>
             </div>

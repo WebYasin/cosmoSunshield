@@ -39,7 +39,7 @@
     <section class="section-space sky-bg">
         <div class="container">
             <div class="row justify-content-between section-content">
-                <div class="col-md-5">
+                <div class="col-md-5 col-8">
                     <div class="full-image">
                         <img src="<?php echo url($fetch_heading->image2 ? $fetch_heading->image2 : $noImage); ?>" alt="logo" />
                     </div>
@@ -52,7 +52,7 @@
                         <p><?php echo $fetch_heading->short_description2 ?$fetch_heading->short_description2:""; ?></p>
                     </div>
                 </div>
-                <div class="col-md-12 d-grid row-gap-3 mt-4 mb-5">
+                <div class="col-md-12 d-grid row-gap-3 mt-4 mb-sm-5 mb-3">
                     <?php
                         if(is_array($all_about_shield) || is_object($all_about_shield))
                         {

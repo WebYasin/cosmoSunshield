@@ -84,6 +84,17 @@ jQuery(document).ready(function($){
       autoplay: true,
       spaceBetween: 45,
       centeredSlides: true,
+      breakpoints: {
+        0: {
+          spaceBetween: 20,
+        },
+        600: {
+          spaceBetween: 45,
+        },
+        900: {
+          spaceBetween: 45,
+        },
+      }
     });
 
     //Work Culture Slider
@@ -96,6 +107,17 @@ jQuery(document).ready(function($){
         nextEl: ".work-next",
         prevEl: ".work-prev",
       },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.4,
+        },
+        600: {
+          slidesPerView: 1.9,
+        },
+        900: {
+          slidesPerView: 1.9,
+        },
+      }
     });
 
     //Men Toggle

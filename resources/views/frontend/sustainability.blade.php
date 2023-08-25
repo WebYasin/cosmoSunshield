@@ -22,14 +22,14 @@
                 <p><?php echo $fetch_heading->description1 ? $fetch_heading->description1 :"";  ?></p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row gy-sm-0 gy-4 mt-5">
             <?php
                 if(is_array($all_sustainability) || is_object($all_sustainability))
                 {
                     foreach ($all_sustainability as $sustainability) {
 
             ?>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-sm-6 col-12">
                     <div class="sustainability-block">
                     <img src="<?php echo url($sustainability->image ? $sustainability->image : $noImage); ?>" alt="image" />
                         <div class="content">
@@ -47,7 +47,7 @@
     <?php if($fetch_heading){ ?>
     <section class="section-space py-0">
         <div class="container section-bg section-space" style="background-image:url(<?php echo url($fetch_heading->image2 ? $fetch_heading->image2 : $noImage); ?>)">
-            <div class="col-md-6 ps-5">
+            <div class="col-lg-6 col-sm-10 col-12 ps-sm-5 ps-3">
                 <div class="title pt-3 medium">
                 <h2><?php echo $fetch_heading->heading2 ? $fetch_heading->heading2 :"";  ?></h2>
                 <p><?php echo $fetch_heading->description2 ? $fetch_heading->description2 :"";  ?></p>
@@ -76,7 +76,7 @@
                                 <img src="<?php echo url($sustainability_goals->image ? $sustainability_goals->image : $noImage); ?>" alt="goal" />
                             </div>
                         </div>
-                        <div class="col-md-8 ps-5">
+                        <div class="col-md-8 ps-sm-5">
                             <div class="title pt-3">
                                 <h4><?php echo $sustainability_goals->name ? $sustainability_goals->name :"";  ?></h4>
                                 <p><?php echo $sustainability_goals->description ? $sustainability_goals->description :"";  ?></p>

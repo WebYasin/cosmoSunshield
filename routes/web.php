@@ -16,6 +16,8 @@ use App\Http\Controllers\admin\Product as Product;
 use App\Http\Controllers\admin\Gallery as Gallery;
 use App\Http\Controllers\admin\Manufacturing as Manufacturing;
 use App\Http\Controllers\admin\Dealer as Dealer;
+use App\Http\Controllers\admin\Enquiry as Enquiry;
+
 use App\Http\Controllers\Frontend;
 
 
@@ -51,6 +53,8 @@ Route::get('join-our-dealer-network', [Frontend::class,'joinDealerNetwork']);
 Route::post('searchData', [Frontend::class,'searchData']);
 Route::post('jobApplied', [Frontend::class,'jobApplied']);
 Route::post('joinDealer', [Frontend::class,'joinDealer']);
+Route::post('enquiry', [Frontend::class,'ContactEnquiry']);
+
 
 
 
@@ -254,3 +258,8 @@ Route::match(['get', 'post'], 'admin/add_manufacturing_heading/{id}', [Manufactu
 Route::get('admin/dealer_network_heading ',[Dealer::class,'dealer_network_heading'])->middleware('adminAuth');
 Route::match(['get', 'post'], 'admin/add_dealer_network_heading', [Dealer::class,'add_dealer_network_heading']);
 Route::match(['get', 'post'], 'admin/add_dealer_network_heading/{id}', [Dealer::class,'add_dealer_network_heading']);
+
+//ENQUIRY
+Route::get('admin/job_applied ',[Enquiry::class,'job_applied'])->middleware('adminAuth');
+Route::get('admin/join_dealer ',[Enquiry::class,'join_dealer'])->middleware('adminAuth');
+Route::get('admin/enquiry ',[Enquiry::class,'Conactenquiry'])->middleware('adminAuth');
