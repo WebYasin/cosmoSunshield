@@ -243,6 +243,11 @@ Route::match(['get', 'post'], 'admin/add_gallery', [Gallery::class,'add_gallery'
 Route::match(['get', 'post'], 'admin/add_gallery/{id}', [Gallery::class,'add_gallery']);
 Route::post('admin/delete_gallery',[Gallery::class,'delete_gallery'])->middleware('adminAuth');
 
+Route::get('admin/video_gallery ',[Gallery::class,'video_gallery'])->middleware('adminAuth');
+Route::match(['get', 'post'], 'admin/add_video_gallery', [Gallery::class,'add_video_gallery']);
+Route::match(['get', 'post'], 'admin/add_video_gallery/{id}', [Gallery::class,'add_video_gallery']);
+Route::post('admin/delete_video_gallery',[Gallery::class,'delete_video_gallery'])->middleware('adminAuth');
+
 //Manufacturing
 Route::get('admin/manufacturing ',[Manufacturing::class,'manufacturing'])->middleware('adminAuth');
 Route::match(['get', 'post'], 'admin/add_manufacturing', [Manufacturing::class,'add_manufacturing']);

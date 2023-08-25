@@ -12,6 +12,7 @@ class GalleryModel extends Model
         'image',
         'sort_order',
         'status',
+        'type',
         'create_date',
         'modify_date',
     ];
