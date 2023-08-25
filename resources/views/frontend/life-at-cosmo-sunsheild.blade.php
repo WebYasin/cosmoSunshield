@@ -7,7 +7,7 @@
                 <h2><?php echo $fetch_heading->heading1 ? $fetch_heading->heading1 :"";  ?></h2>
                 <p><?php echo $fetch_heading->description1 ? $fetch_heading->description1 :"";  ?></p>
             </div>
-            <div class="text-center bottom-down-50">
+            <div class="text-center">
                 <img src="<?php echo config('app.CATALOG'); ?>images/moon-curve.svg" alt="curve" />
             </div>
         </div>
@@ -41,7 +41,7 @@
     <?php if(count($all_gallery) >= 1){ ?>
     <section class="section-space">
         <div class="container">
-            <div class="title col-md-6 mx-auto text-center">
+            <div class="title col-md-12 mx-auto text-center">
             <h2><?php echo $fetch_heading->heading3 ? $fetch_heading->heading3 :"";  ?></h2>
             <p><?php echo $fetch_heading->description3 ? $fetch_heading->description3 :"";  ?></p>
 
@@ -111,7 +111,7 @@
             <div class="text-center mt-4">
                 <a href="<?php echo url('openings'); ?>" class="btn">View All Openings</a>
             </div>
-            <div class="cta-section mt-5">
+            <!-- <div class="cta-section mt-5">
                 <div class="row align-items-center">
                     <div class="col-md-8">
                         <h3><?php echo $fetch_heading->heading5 ? $fetch_heading->heading5 :"";  ?></h3>
@@ -120,7 +120,7 @@
                         <a href="<?php echo $fetch_heading->btn_link ? $fetch_heading->btn_link :"";  ?>" class="btn white-fill"><?php echo $fetch_heading->btn_name ? $fetch_heading->btn_name :"";  ?></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     @endsection

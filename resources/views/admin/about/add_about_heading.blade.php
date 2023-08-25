@@ -79,7 +79,7 @@
                             <div class="form-group required">
                                 <label class="col-sm-2 control-label" for="input-username">Heading</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="heading2" value="<?php echo old('heading2', $heading2); ?>" placeholder="Heading" class="form-control" />
+                                    <input type="text" name="heading2" value='<?php echo old("heading2", $heading2); ?>' placeholder="Heading" class="form-control" />
                                     @error('heading2')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror

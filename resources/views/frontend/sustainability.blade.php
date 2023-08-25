@@ -33,7 +33,7 @@
                     <div class="sustainability-block">
                     <img src="<?php echo url($sustainability->image ? $sustainability->image : $noImage); ?>" alt="image" />
                         <div class="content">
-                        <h2><?php echo $sustainability->name ? $sustainability->name :"";  ?></h2>
+                        <h4><?php echo $sustainability->name ? $sustainability->name :"";  ?></h4>
                         <p><?php echo $sustainability->description ? $sustainability->description :"";  ?></p>
                         </div>
                     </div>

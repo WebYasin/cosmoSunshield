@@ -25,27 +25,51 @@
                 <div class="col-md-5">
                     <div class="gray-bg p-5">
                         <p>Please use this form to apply for this position. LR HR will review your application and if shortlisted you will receive a call very soon.</p>
-                        <form action="" class="mt-4">
+                        @if(session()->has('success'))
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong> {{ session()->get('success') }}</strong> </a>
+                        </div>
+                        @endif
+
+                        @if(session()->has('error'))
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong> {{ session()->get('error') }}</strong> </a>
+                        </div>
+                        @endif
+                        <form action="<?php echo url('jobApplied'); ?>" method="POST" class="mt-4">
+                        @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">Full Name*</label>
-                                        <input type="text" placeholder="Full Name" class="form-control" required="">
+                                        <input type="text" placeholder="Full Name" name="name" class="form-control" required="">
+                                        @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">Email*</label>
-                                        <input type="email" placeholder="Email" class="form-control" required="">
+                                        <input type="email" placeholder="Email" name="email" class="form-control" required="">
+                                        @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">Phone*</label>
-                                        <input type="tel" placeholder="Phone" class="form-control" required="">
+                                        <input type="tel" placeholder="Phone" name="number" class="form-control" required="">
+                                        <input type="hidden" name="applied_for" value="<?php echo $fetch_blog->title ? $fetch_blog->title:"";  ?>">
+                                        @error('number')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <!-- <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">Position</label>
                                         <select class="form-select">
@@ -53,7 +77,7 @@
                                             <option value="2">CFO</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-12">
                                     <button type="submit" class="btn">Submit</button>
                                 </div>

@@ -4,9 +4,6 @@
 /public/storage
 /storage/*.key
 /vendor
-/uploads
-/uploads/*
-
 .env
 .env.backup
 .env.production
@@ -21,3 +18,5 @@ yarn-error.log
 /.vscode
 .zip
 .rar
+/uploads
+/uploads/*

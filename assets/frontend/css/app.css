@@ -30,6 +30,13 @@ h1, h2, h3, h4, h5, h6{
 header {
     position: relative;
     z-index: 100;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 13px 3px #00000054;
+}
+a.logo {
+    display: block;
 }
 header .navigation ul {
     list-style: none;
@@ -149,6 +156,7 @@ footer .copyright a:hover {
 footer .logo p {
     /* font-size: 18px; */
     margin-top: 20px;
+    color: #fff;
 }
 header .navigation ul li.button a {
     border: 2px solid #ED2C3F;
@@ -1064,6 +1072,11 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     margin-top: -50px;
     position: relative;
 }
+.title-section .title-holder svg {
+    position: relative;
+    top: 60px;
+    max-width: 100%;
+}
 /**********************About us page css end******************/
 /**********************Leadership page css start*******************/
 .fs-20{
@@ -1123,6 +1136,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     padding: 30px 40px;
     top: 15%;
     right: 10%;
+    max-width: 50%;
 }
 
 .team-block .content h3 {
@@ -1133,7 +1147,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     font-size: 14px;
     margin: 0 0 25px 0;
 }
-
+.team-block .content .info h3 {
+    font-size: 18px;
+    line-height: 25px;
+}
 .team-block {
     position: relative;
 }
@@ -1339,8 +1356,17 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: #ED2C3F;
     color: #fff;
     border-radius: 10px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cta-section > a {
+    text-decoration: none;
 }
 
+.cta-section > a .title h2 {
+    color: #fff;
+}
 .cta-section h3 {
     font-family: Gilroy-Semibold;
     font-size: 30px;
@@ -1441,6 +1467,15 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     padding: 0;
     margin: 0;
 }
+.job-info {
+    display: flex;
+    align-items: center;
+    color: #535353;
+    margin-bottom: 30px;
+    column-gap: 40px;
+}
+/**************Job detail page css end***************************/
+/**************Join network page css start********************/
 .bullet-list ul {
     list-style: none;
     padding: 0;
@@ -1450,6 +1485,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     column-gap: 90px;
     row-gap: 30px;
 }
+
 .bullet-list ul li {
     position: relative;
     padding-left: 21px;
@@ -1468,6 +1504,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     left: 0;
     top: 6px;
 }
+.consent-line {
+    font-size: 14px;
+    color: #525252;
+}
 label.upload-btn {
     background: #FFFFFF;
     padding: 10px 40px;
@@ -1479,4 +1519,4 @@ label.upload-btn {
 label.upload-btn svg {
     margin-right: 6px;
 }
-/**************Job detail page css end***************************/
+/**************Join network page css end********************/

@@ -31,13 +31,16 @@ $wconfig                = websetting();
 <header>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-4">
-                <a href="" class="logo">
-                    <img src="<?php echo config('app.CATALOG'); ?>images/logo.svg" class="img-fluid" alt="Cosmo Sunshield" decoding="async" />
+            <div class="col-md-3 col-8">
+                <a href="/" class="logo">
+                    <img src="<?php echo url($wconfig['checkout_image'] ? $wconfig['checkout_image'] :'images/logo.svg'); ?>" class="img-fluid" alt="Cosmo Sunshield" decoding="async" />
                 </a>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9 col-4">
                 <div class="navigation">
+                    <a href="/" class="logo mb-4 d-lg-none d-sm-block">
+                        <img src="<?php echo url($wconfig['checkout_image'] ? $wconfig['checkout_image'] :'images/logo.svg'); ?>" class="img-fluid" alt="Cosmo Sunshield" decoding="async" />
+                    </a>
                     <ul class="menu">
                         <?php
                             foreach ($header_menu as $menuHeader) {
@@ -59,16 +62,22 @@ $wconfig                = websetting();
                             <?php } } ?>
 
 
-                        <li>
+                        <li class="d-lg-block d-none">
                             <button type="button" class="empty-btn">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16Zm10 2-4.35-4.35" stroke="#272727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                         </li>
-                        <li class="button"><a href="<?php echo url('contact-us'); ?>">Contact</a></li>
+                        <li class="button d-lg-block d-none"><a href="<?php echo url('contact-us'); ?>">Contact</a></li>
                     </ul>
                 </div>
+                <button type="button" class="d-lg-none d-block menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <a href="<?php echo url('contact-us'); ?>" class="btn d-lg-none d-sm-inline-block d-none float-end me-3">Contact</a>
             </div>
         </div>
     </div>
@@ -81,10 +90,10 @@ $wconfig                = websetting();
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-sm-12 col-12 mb-lg-0 mb-5">
                 <div class="logo">
                     <a href="index.php" class="custom-logo-link">
-                        <img src="<?php echo url($wconfig['checkout_image'] ? $wconfig['checkout_image'] :'images/logo.png'); ?>" alt="Cosmo Sunshield" decoding="async" />
+                        <img src="<?php echo url($wconfig['checkout_image'] ? $wconfig['checkout_image'] :'images/logo.svg'); ?>" alt="Cosmo Sunshield" decoding="async" />
                     </a>
                     <p><?php echo $wconfig['config_footer_note'] ? $wconfig['config_footer_note'] :""; ?></p>
                 </div>
@@ -145,7 +154,29 @@ $wconfig                = websetting();
                     <?php } ?>
                 </div>
             </div>
-            <div class="col-md-4 offset-1">
+            <div class="col-lg-2 offset-lg-1 col-sm-4 col-6 mt-sm-0 mt-5">
+                <div class="footer-widget">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="<?php echo url('about-us'); ?>">Our Story</a></li>
+                        <li><a href="<?php echo url('leadership'); ?>">Leadership Team</a></li>
+                        <li><a href="<?php echo url('manufacturing'); ?>">Manufacturing</a></li>
+                        <li><a href="<?php echo url('sustainability'); ?>">Sustainability</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-6 mt-sm-0 mt-5">
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="<?php echo url('blogs'); ?>">Blogs</a></li>
+                        <li><a href="<?php echo url('life-at-cosmo-sunshield'); ?>">Careers</a></li>
+                        <li><a href="<?php echo url('quality-assurance'); ?>">Quality Assurance</a></li>
+                        <li><a href="<?php echo url('join-our-dealer-network'); ?>">Dealers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="col-lg-4 offset-lg-1 col-sm-8 col-12">
                 <div class="footer-widget half-menu">
                     <h4>Company</h4>
                     <?php
@@ -160,8 +191,8 @@ $wconfig                = websetting();
                     </ul>
                     <?php } ?>
                 </div>
-            </div>
-            <div class="col-md-2 offset-1">
+            </div> -->
+            <div class="col-lg-2 offset-lg-1 col-sm-4 col-12 mt-sm-0 mt-5">
                 <div class="footer-widget">
                     <h4>Solutions</h4>
                     <ul>
@@ -178,13 +209,13 @@ $wconfig                = websetting();
             <div class="col-md-12">
                 <div class="copyright">
                     <div class="row justify-content-between">
-                        <div class="col-md-8 d-flex m-0 justify-content-between">
-                            <p class="mb-0 d-inline-block" ><?php echo $wconfig['config_copywrite'] ? $wconfig['config_copywrite'] :""; ?></p>
+                        <div class="col-lg-8 col-12 d-flex flex-wrap m-0 justify-content-sm-between justify-content-center">
+                            <p class="mb-0 d-inline-block text-sm-start text-center mb-sm-0 mb-3" ><?php echo $wconfig['config_copywrite'] ? $wconfig['config_copywrite'] :""; ?></p>
 
                             <a href="#">Privacy Policy</a>
                             <a href="#">Terms of Use</a>
                         </div>
-                        <div class="col-md-4 text-end">
+                        <div class="col-lg-4 col-12 text-lg-end text-center mt-lg-0 mt-3">
                             <p class="mb-0">
                                 <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.4 1.8h11.2c.77 0 1.4.63 1.4 1.4v8.4c0 .77-.63 1.4-1.4 1.4H2.4c-.77 0-1.4-.63-1.4-1.4V3.2c0-.77.63-1.4 1.4-1.4Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -34,7 +34,10 @@
                         <div class="content">
                             <h3><?php echo $team->title ? $team->title :"";  ?></h3>
                             <h6><?php echo $team->designation ? $team->designation :"";  ?></h6>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">More Details</a>
+                            <div class="info">
+                                <?php echo $team->description ? $team->description :"";  ?>
+                            </div>
+                            <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">More Details</a> -->
                         </div>
                     </div>
                 </div>

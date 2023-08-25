@@ -41,7 +41,7 @@ Route::get('blogs', [Frontend::class,'blogs']);
 Route::get('blog-details/{id}', [Frontend::class,'blogDetails']);
 Route::get('contact-us', [Frontend::class,'contactUs']);
 Route::get('leadership', [Frontend::class,'leaderShip']);
-Route::get('life-at-cosmo-sunsheild', [Frontend::class,'lifeAtCosmo']);
+Route::get('life-at-cosmo-sunshield', [Frontend::class,'lifeAtCosmo']);
 Route::get('openings', [Frontend::class,'openings']);
 Route::get('job-details/{id}', [Frontend::class,'jobDetails']);
 Route::get('manufacturing', [Frontend::class,'manufacturing']);
@@ -49,7 +49,8 @@ Route::get('quality-assurance', [Frontend::class,'qualityAssurance']);
 Route::get('sustainability', [Frontend::class,'sustainability']);
 Route::get('join-our-dealer-network', [Frontend::class,'joinDealerNetwork']);
 Route::post('searchData', [Frontend::class,'searchData']);
-
+Route::post('jobApplied', [Frontend::class,'jobApplied']);
+Route::post('joinDealer', [Frontend::class,'joinDealer']);
 
 
 

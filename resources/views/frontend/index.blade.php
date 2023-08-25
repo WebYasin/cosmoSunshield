@@ -25,7 +25,7 @@
         <div class="container">
             <?php if($fetch_heading){ ?>
             <div class="row">
-                <div class="col-md-10 mx-auto">
+                <div class="col-lg-10 col-12 mx-auto">
                     <div class="title text-center">
                         <h2 data-cue="slideInUp"><?php echo $fetch_heading->heading1 ?$fetch_heading->heading1:""; ?></h2>
                         <div class="col-md-9 mx-auto">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <?php } ?>
-            <div class="row">
+            <div class="row gy-lg-0 gy-4">
                 <?php
                     if(is_array($all_solution) || is_object($all_solution)){
                         $i=0;
@@ -43,7 +43,7 @@
                             $i++;
                             $class = $i == 1 ? 'right-curve':'';
                 ?>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-12">
                     <div class="solution-block <?php echo $class; ?>" data-cue="slideInRight">
                         <div class="img-box">
                             <img src="<?php echo url($solution->image ? $solution->image : $noImage); ?>" alt="For Buildings" decoding="async" loading="lazy" />
@@ -69,7 +69,7 @@
     <section class="section-space pt-0">
         <div class="container">
             <div class="row">
-                <div class="col-md-7 mx-auto">
+                <div class="col-lg-7 col-12 mx-auto">
                     <div class="title text-center">
                         <h2 data-cue="slideInUp"><?php echo $fetch_heading->heading2 ?$fetch_heading->heading2:""; ?></h2>
                         <p data-cue="slideInUp"><?php echo $fetch_heading->description2 ?$fetch_heading->description2:""; ?></p>
@@ -101,8 +101,10 @@
                             <?php } } ?>
                         </div>
                     </div>
-                    <!-- <div class="swiper-button-prev product-prev box-swiper-btn float dark"></div>
-                    <div class="swiper-button-next product-next box-swiper-btn float dark"></div> -->
+                    <div class="d-sm-none d-block text-center mt-4">
+                        <div class="swiper-button-prev product-prev box-swiper-btn dark"></div>
+                        <div class="swiper-button-next product-next box-swiper-btn dark"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,7 +114,7 @@
     <section class="section-space">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-12">
                     <div class="title" data-cue="slideInLeft">
                         <h2><?php echo $fetch_heading->heading3 ?$fetch_heading->heading3:""; ?></h2>
                     </div>
@@ -153,11 +155,11 @@
        ?>
     <section class="section-space pt-0">
         <div class="container">
-            <div class="row" data-cues="slideInUp">
+            <div class="row gy-lg-0 gy-5" data-cues="slideInUp">
             <?php if(is_array($all_home_feature) || is_object($all_home_feature)){
                                     foreach ($all_home_feature as $home_feature) {
                                   ?>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-sm-6 col-6">
                     <div class="icon-box">
                         <div class="icon">
                             <img src="<?php echo url($home_feature->image ? $home_feature->image : $noImage); ?>" alt="<?php echo $home_feature->title ?$home_feature->title:""; ?>" />
@@ -174,19 +176,19 @@
     <section class="section-space pt-0">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-md-3">
+                <div class="col-lg-3 col-6">
                     <div class="full-image" data-cues="slideInLeft">
                         <img src="<?php echo url($fetch_heading->image4 ? $fetch_heading->image4 : $noImage); ?>" alt="edge" />
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-lg-4 col-12 text-center order-lg-0 order-1 mt-lg-0 mt-5">
                     <div class="title" data-cues="slideInUp">
                         <h2><?php echo $fetch_heading->heading4 ?$fetch_heading->heading4:""; ?></h2>
                         <p><?php echo $fetch_heading->description4 ?$fetch_heading->description4:""; ?></p>
                     </div>
                     <a href="<?php echo $fetch_heading->btn_link4 ?$fetch_heading->btn_link4:"#"; ?>" class="btn" data-cue="slideInUp">Learn More</a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-6">
                     <div class="full-image" data-cues="slideInRight">
                         <img src="<?php echo url($fetch_heading->image4_1 ? $fetch_heading->image4_1 : $noImage); ?>" alt="edge" />
                     </div>
@@ -206,7 +208,7 @@
                 <div class="row">
                     <div class="col-md-11 mx-auto">
                         <div class="row justify-content-between">
-                            <div class="col-md-6">
+                            <div class="col-lg-6 col-10">
                                 <div class="explore-info" data-cues="slideInUp">
                                     <!-- <h6>For Dealers</h6> -->
                                     <h3><?php echo $fetch_heading->heading5 ?$fetch_heading->heading5:""; ?></h3>
@@ -214,7 +216,7 @@
 
                                     <div class="mt-4">
                                         <a href="<?php echo $fetch_heading->btn_link5_1 ?$fetch_heading->btn_link5_1:""; ?>" class="btn white me-3">Become a Dealer</a>
-                                        <a href="<?php echo $fetch_heading->btn_link5_2 ?$fetch_heading->btn_link5_2:""; ?>" class="btn white">Locate a Dealer</a>
+                                        <!-- <a href="<?php echo $fetch_heading->btn_link5_2 ?$fetch_heading->btn_link5_2:""; ?>" class="btn white">Locate a Dealer</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -244,12 +246,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row gx-5" data-cue="slideInRight">
+            <div class="row gy-5" data-cues="slideInRight">
                 <?php
                     if(is_array($all_blogs) || is_object($all_blogs)){
+                        $i=0;
                         foreach ($all_blogs as $blogs) {
+                            $i++;
+                            $class_name = count($all_blogs) == $i ? 'd-lg-block d-sm-none d-block':"";
                 ?>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-sm-6 col-12 <?php echo $class_name ?>">
                     <div class="blog-block">
                         <div class="img-box">
                             <a href="<?php echo url('blog-details/'. $blogs->slug); ?>">
@@ -274,14 +279,14 @@
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 px-0">
-                    <div class="swiper testimonial">
-                        <div class="swiper-wrapper">
+                <div class="col-lg-6 col-12 px-0">
+                    <div class="swiper testimonial h-100">
+                        <div class="swiper-wrapper h-100">
                         <?php if(is_array($all_testimonial) || is_object($all_testimonial)){
                                     foreach ($all_testimonial as $testimonial_img) {
                                   ?>
-                            <div class="swiper-slide">
-                                <div class="full-image">
+                            <div class="swiper-slide h-100">
+                                <div class="full-image full-height h-100">
                                     <img src="<?php echo url($testimonial_img->image ? $testimonial_img->image : $noImage); ?>" alt="testimonial" />
                                 </div>
                             </div>
@@ -292,7 +297,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 p-5 bg-red h-full">
+                <div class="col-lg-6 col-12 p-sm-5 p-2 bg-red h-full">
                     <div class="p-4">
                         <div class="title">
                         <h2><?php echo $fetch_heading->heading7 ?$fetch_heading->heading7:""; ?></h2>

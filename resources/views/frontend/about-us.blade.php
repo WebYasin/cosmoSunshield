@@ -18,12 +18,12 @@
     <section class="section-space">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-6 pe-5">
+                <div class="col-lg-6 col-12 pe-lg-5">
                     <div class="full-image">
                         <img src="<?php echo url($fetch_heading->image1 ? $fetch_heading->image1 : $noImage); ?>" alt="about-imge"/>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 mt-lg-0 mt-4">
                     <div class="title color">
                         <h2><?php echo $fetch_heading->heading1 ?$fetch_heading->heading1:""; ?></h2>
                     </div>
@@ -44,7 +44,7 @@
                         <img src="<?php echo url($fetch_heading->image2 ? $fetch_heading->image2 : $noImage); ?>" alt="logo" />
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 my-lg-0 my-4">
                     <div class="title red">
                         <h2><?php echo $fetch_heading->heading2 ?$fetch_heading->heading2:""; ?></h2>
                     </div>
@@ -105,20 +105,20 @@
     <section class="section-space">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-lg-6 mx-auto">
                     <div class="title text-center">
                     <h2><?php echo $fetch_heading->heading3 ?$fetch_heading->heading3:""; ?></h2>
                         <p><?php echo $fetch_heading->description3 ?$fetch_heading->description3:""; ?></p>
                     </div>
                 </div>
             </div>
-            <div class="row gx-5 gy-3">
+            <div class="row gx-sm-5 gy-3">
                 <?php
                     if(is_array($all_value) || is_object($all_value))
                     {
                         foreach ($all_value as $value) {
                 ?>
-                <div class="col-md-4 pe-5">
+                <div class="col-lg-4 col-sm-6 col-12 pe-lg-5">
                     <div class="value-block">
                         <img src="<?php echo url($value->image ? $value->image : $noImage); ?>"  alt="<?php echo $value->title ?$value->title:""; ?>" />
                         <h4><?php echo $value->title ?$value->title:""; ?></h4>
@@ -141,7 +141,7 @@
         <div class="container up-shift">
             <div class="section-content text-center">
             <?php echo $fetch_heading->description4 ?$fetch_heading->description4:""; ?>
-                <a href="#" class="btn">Learn More</a>
+                <a href="<?php echo url('sustainability'); ?>" class="btn">Learn More</a>
             </div>
         </div>
     </section>
@@ -152,10 +152,12 @@
             <div class="row ">
                 <div class="col-md-12">
                     <div class="cta-section" style="background-image: url(<?php echo url($fetch_heading->image5 ? $fetch_heading->image5 : $noImage); ?>)">
-                        <div class="title">
-                            <h2><?php echo $fetch_heading->heading5 ?$fetch_heading->heading5:""; ?></h2>
-                            <p> <?php echo $fetch_heading->description5 ?$fetch_heading->description5:""; ?></p>
-                        </div>
+                        <a href="<?php echo url('leadership'); ?>">
+                            <div class="title">
+                                <h2><?php echo $fetch_heading->heading5 ?$fetch_heading->heading5:""; ?></h2>
+                                <p> <?php echo $fetch_heading->description5 ?$fetch_heading->description5:""; ?></p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
