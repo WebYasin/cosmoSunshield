@@ -101,6 +101,7 @@ class Frontend extends Controller
         $data['fetch_banner']           = DB::table('front_menu')->where([['status', 1], ['link', $path]])->first();
         $data['fetch_heading']          = DB::table('dealer_network_heading')->where([['status', 1]])->first();
         $data['wconfig']                = websetting();
+        $data['all_solution']           = DB::table('solution')->where('status', 1)->orderBy('sort_order', 'ASC')->get();
 
         $data['page_title']             = $data['fetch_banner']->metaTitle;
         $data['metaTitle']                 = $data['fetch_banner']->metaTitle;
@@ -284,6 +285,13 @@ class Frontend extends Controller
             $save['interest_in']              =  json_encode($request->input('interest_in'));
             $save['create_date']              =  date('Y-m-d');
             $save['modify_date']              =  date('Y-m-d');
+            //  print_r($_POST);exit();
+
+            if (!empty($request->image)) {
+                $imageName = time() . rand() . '.' . $request->image->extension();
+                $request->image->move('uploads/images', $imageName);
+                $save['image'] = 'uploads/images/' . $imageName;
+            }
 
             $result                           = DB::table('join_dealer')->insert($save);
             if ($result) {
