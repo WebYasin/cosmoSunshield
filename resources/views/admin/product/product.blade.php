@@ -4,8 +4,7 @@
     <div class="page-header">
         <div class="container-fluid">
             <div class="pull-right">
-                <a href="<?php echo url('admin/add_product_category'); ?>" data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus"></i></a> &nbsp;
-                <!-- <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-user').submit() : false;"><i class="fa fa-trash-o"></i></button> -->
+                <a href="<?php echo url('admin/add_product'); ?>" data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus"></i></a> &nbsp;
             </div>
             <h1><?php echo $page_title; ?></h1>
         </div>
@@ -39,7 +38,6 @@
                                 <tr>
                                 <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                                     <td class="text-left">Heading</td>
-                                    <td class="text-left">Short Description</td>
                                     <td class="text-left">Sort Order</td>
                                     <td class="text-left">Image</td>
                                     <td class="text-left">Status</td>
@@ -53,11 +51,10 @@
                                         <tr>
                                             <td class="text-center"><input type="checkbox" name="selected[]" value="<?php echo $value->id; ?>" /></td>
                                             <td class="text-left"><?= $value->name; ?></td>
-                                            <td class="text-left"><?= $value->short_description; ?></td>
                                             <td class="text-left"><?= $value->sort_order; ?></td>
                                             <td class="text-left"><img src="<?php echo url($value->image ? $value->image:$noImage); ?>" width="70" height="70"></td>
                                             <td class="text-left"><?php echo  $value->status == 1 ? 'Active' : 'Deactive'; ?></td>
-                                            <td class="text-left"><a href="<?php echo url('admin/add_product_category/' . $value->id); ?>"><button type="button" class="btn btn-info"><i class="fa fa-pencil"></i>&nbsp; Edit</button></a></td>
+                                            <td class="text-left"><a href="<?php echo url('admin/add_product/' . $value->id); ?>"><button type="button" class="btn btn-info"><i class="fa fa-pencil"></i>&nbsp; Edit</button></a></td>
                                         </tr>
                                 <?php }
                                 } ?>

@@ -241,6 +241,11 @@ Route::post('admin/delete_sustainability_goal',[Sustainability::class,'delete_su
 Route::get('admin/product_category ',[Product::class,'product_category'])->middleware('adminAuth');
 Route::match(['get', 'post'], 'admin/add_product_category', [Product::class,'add_product_category']);
 Route::match(['get', 'post'], 'admin/add_product_category/{id}', [Product::class,'add_product_category']);
+//PRODUCT
+Route::get('admin/product ',[Product::class,'product'])->middleware('adminAuth');
+Route::match(['get', 'post'], 'admin/add_product', [Product::class,'add_product']);
+Route::match(['get', 'post'], 'admin/add_product/{id}', [Product::class,'add_product']);
+
 
 //Gallery
 Route::get('admin/gallery ',[Gallery::class,'gallery'])->middleware('adminAuth');

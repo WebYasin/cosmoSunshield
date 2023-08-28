@@ -37,10 +37,6 @@
                     @csrf
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
-                        <li><a href="#tab-data" data-toggle="tab">Data</a></li>
-                        <li><a href="#tab-image" data-toggle="tab">Images</a></li>
-                        <li><a href="#tab-feature" data-toggle="tab">Feature</a></li>
-                        <li><a href="#tab-seo" data-toggle="tab">SEO</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="tab-general" class="tab-pane active">

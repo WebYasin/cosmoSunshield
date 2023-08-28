@@ -5,7 +5,10 @@ use App\Models\CommonModel;
 use App\Models\SettingModel;
 use App\Models\ProductCategoryModel;
 use App\Models\ProductCategoryFeatureModel;
+use App\Models\ProductModel;
 use Illuminate\Http\Request;
+use App\Models\SolutionModel;
+
 use Illuminate\Support\Str;
 
 
@@ -238,5 +241,93 @@ class Product extends Controller
         }
 
         return view('admin.product.add_product_category', $data);
+    }
+    function product(Request $request)
+    {
+        if (empty($this->AdminModel->permission($request->segment(2)))) {
+            return redirect('admin/permission-denied');
+        }
+        $data['detail']      = ProductModel::get();
+        $data['page_title']  = 'Product List';
+        return  view('admin.product.product', $data);
+    }
+
+    function add_product(Request $request, $id = false)
+    {
+        $data['all_category'] = ProductCategoryModel::where(array('status'=>1))->get();
+        $data['all_solution'] = SolutionModel::where(array('status'=>1))->get();
+        if (!empty($id)) {
+            $data['page_title']     = 'Edit Product ';
+            $data['form_action']    = 'admin/add_product/' . $id;
+            $row =  ProductModel::firstWhere('id', $id);
+            $data['name']           =  $row->name;
+            $data['category_id']    =  $row->category_id;
+            $data['solution_id']    =  $row->solution_id;
+            $data['image']          =  $row->image;
+            $data['sort_order']     =  $row->sort_order;
+            $data['status']         =  $row->status;
+
+        } else {
+            $data['page_title']     = 'Add Product ';
+            $data['form_action']    = 'admin/add_product';
+            $data['name']           =  '';
+            $data['category_id']    =  '';
+            $data['solution_id']    =  '';
+            $data['image']          =  '';
+            $data['sort_order']     = '';
+            $data['status']         =  '';
+
+        }
+        if ($request->getMethod() == 'POST') {
+            $rules = [
+                'name'              => 'required',
+                'category_id'       => 'required',
+                'status'            => 'required',
+                'solution_id'       => 'required',
+                'sort_order'        => 'required',
+                'image'             => 'image|max:1024',
+            ];
+
+            $request->validate($rules);
+
+            $save = array();
+            $save['name']               =  $request->input('name');
+            $save['category_id']       =  $request->input('category_id');
+            $save['sort_order']         =  $request->input('sort_order');
+            $save['solution_id']       =  $request->input('solution_id');
+            $save['status']             =  $request->input('status');
+
+
+
+                if (!empty($request->image)) {
+                    $imageName = time() .rand(). '.' . $request->image->extension();
+                    $request->image->move('uploads/images', $imageName);
+                    $save['image'] = 'uploads/images/' . $imageName;
+                }
+
+
+            if ($id) {
+
+                $save['modify_date'] =  date('Y-m-d');
+                $result = ProductModel::where('id', $id)->update($save);
+                if ($result) {
+                    return redirect()->back()->with('success', 'Record Update successfully!');
+                } else {
+                    return redirect()->back()->with('error', 'Record not update! Please Make Some Changes');
+                }
+            } else {
+                $save['create_date'] =  date('Y-m-d');
+                $save['modify_date'] =  date('Y-m-d');
+
+                $result = ProductModel::create($save);
+                if ($result) {
+                    return redirect()->back()->with('success', 'Record insert successfully!');
+                } else {
+                    return redirect()->back()->with('error', 'Record not insert!');
+                }
+            }
+        }
+
+        return view('admin.product.add_product', $data);
     }
 }
