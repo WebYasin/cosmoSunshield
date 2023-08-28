@@ -132,6 +132,21 @@ class Frontend extends Controller
 
         return view('frontend.products',$data);
     }
+
+    function solutions(Request $request){
+        $path = $request->path();
+        $data['fetch_banner']           = DB::table('front_menu')->where([['status',1],['link',$path]])->first();
+        $data['all_solution']           = DB::table('solution')->where(array('status'=>1))->orderBy('sort_order','ASC')->get();
+        $data['fetch_heading']          = DB::table('solution_heading')->where([['status',1]])->first();
+
+        $data['page_title']             = $data['fetch_banner']->metaTitle;
+        $data['metaTitle'] 			    = $data['fetch_banner']->metaTitle;
+   		$data['metaKeyword'] 		    = $data['fetch_banner']->metaKeyword;
+   		$data['metaDescription'] 	    = $data['fetch_banner']->metaDescription;
+        $data['noImage']                = $this->noImage;
+
+        return view('frontend.solutions',$data);
+    }
     function productDetails(Request $request,$path){
         $data['fetch_product']          =  DB::table('product_category')->where([['status',1],['slug',$path]])->first();
         $data['all_feature']            =  DB::table('product_category_feature')->where(array('status'=>1,'category_id'=> $data['fetch_product']->id))->orderBy('sort_order','ASC')->get();

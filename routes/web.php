@@ -50,13 +50,16 @@ Route::get('manufacturing', [Frontend::class,'manufacturing']);
 Route::get('quality-assurance', [Frontend::class,'qualityAssurance']);
 Route::get('sustainability', [Frontend::class,'sustainability']);
 Route::get('join-our-dealer-network', [Frontend::class,'joinDealerNetwork']);
+Route::get('solutions', [Frontend::class,'solutions']);
+Route::get('products', [Frontend::class,'Product']);
+Route::get('product-detail/{id}', [Frontend::class,'productDetails']);
+
 Route::post('searchData', [Frontend::class,'searchData']);
 Route::post('jobApplied', [Frontend::class,'jobApplied']);
 Route::post('joinDealer', [Frontend::class,'joinDealer']);
 Route::post('enquiry', [Frontend::class,'ContactEnquiry']);
 
-Route::get('products', [Frontend::class,'Product']);
-Route::get('product-detail/{id}', [Frontend::class,'productDetails']);
+
 
 
 
