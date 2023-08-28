@@ -75,76 +75,27 @@
                 <div class="col-md-12">
                     <div class="swiper sub-product-slider">
                         <div class="swiper-wrapper">
+                            <?php
+                                    if(is_array($all_product) || is_object($all_product))
+                                    {
+                                        foreach ($all_product as $product) {
+
+                            ?>
                             <div class="swiper-slide">
                                 <div class="blog-block type2 hover my-3">
                                     <div class="img-box">
                                         <a href="#">
-                                            <img src="<?php echo config('app.CATALOG'); ?>images/sub-product-1.jpg" alt="Sunshield" decoding="async" loading="lazy"
+                                            <img src="<?php echo url($product->image ?$product->image: $noImage); ?>" alt="Sunshield" decoding="async" loading="lazy"
                                             />
                                         </a>
                                     </div>
                                     <div class="content mt-3">
-                                        <h3><a href="#">CS-600-PAC 0580</a></h3>
-                                        <a href="#" class="link">More Details</a>
+                                        <h3><a href="#"><?php echo $product->name ?$product->name:""; ?></a></h3>
+                                        <!-- <a href="#" class="link">More Details</a> -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="blog-block type2 hover my-3">
-                                    <div class="img-box">
-                                        <a href="#">
-                                            <img src="<?php echo config('app.CATALOG'); ?>images/sub-product-2.jpg" alt="Sunshield" decoding="async" loading="lazy"
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class="content mt-3">
-                                        <h3><a href="#">CS-600-PAC 0590</a></h3>
-                                        <a href="#" class="link">More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-block type2 hover my-3">
-                                    <div class="img-box">
-                                        <a href="#">
-                                            <img src="<?php echo config('app.CATALOG'); ?>images/sub-product-3.jpg" alt="Sunshield" decoding="async" loading="lazy"
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class="content mt-3">
-                                        <h3><a href="#">CS-600-PAC 1590</a></h3>
-                                        <a href="#" class="link">More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-block type2 hover my-3">
-                                    <div class="img-box">
-                                        <a href="#">
-                                            <img src="<?php echo config('app.CATALOG'); ?>images/sub-product-4.jpg" alt="Sunshield" decoding="async" loading="lazy"
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class="content mt-3">
-                                        <h3><a href="#">CS-600-PAC 1595</a></h3>
-                                        <a href="#" class="link">More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-block type2 hover my-3">
-                                    <div class="img-box">
-                                        <a href="#">
-                                            <img src="<?php echo config('app.CATALOG'); ?>images/sub-product-2.jpg" alt="Sunshield" decoding="async" loading="lazy"
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class="content mt-3">
-                                        <h3><a href="#">CS-600-PAC 1590</a></h3>
-                                        <a href="#" class="link">More Details</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } } ?>
                         </div>
                     </div>
                     <div class="text-center mt-3">

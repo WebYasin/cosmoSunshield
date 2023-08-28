@@ -134,7 +134,8 @@ class Frontend extends Controller
     }
     function productDetails(Request $request,$path){
         $data['fetch_product']          =  DB::table('product_category')->where([['status',1],['slug',$path]])->first();
-        $data['all_feature']               =  DB::table('product_category_feature')->where(array('status'=>1,'category_id'=> $data['fetch_product']->id))->orderBy('sort_order','ASC')->get();
+        $data['all_feature']            =  DB::table('product_category_feature')->where(array('status'=>1,'category_id'=> $data['fetch_product']->id))->orderBy('sort_order','ASC')->get();
+        $data['all_product']            =  DB::table('product')->where(array('status'=>1,'category_id'=> $data['fetch_product']->id))->orderBy('sort_order','ASC')->get();
 
         $data['page_title']             = $data['fetch_product']->meta_title;
         $data['metaTitle'] 			    = $data['fetch_product']->meta_title;

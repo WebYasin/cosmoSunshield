@@ -242,6 +242,16 @@ $wconfig                = websetting();
             </div>
         </div>
     </div>
+    <div class="modal fade" id="video-popup-2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body d-grid">
+            <video src="" class="w-100" autoplay muted controls controlsList="nodownload" disablePictureInPicture ></video>
+        </div>
+        </div>
+    </div>
+</div>
 
     <script>
         $('.search_btn').on('click', function(event) {
