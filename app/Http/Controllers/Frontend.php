@@ -132,6 +132,18 @@ class Frontend extends Controller
 
         return view('frontend.products',$data);
     }
+    function productDetails(Request $request,$path){
+        $data['fetch_product']          =  DB::table('product_category')->where([['status',1],['slug',$path]])->first();
+        $data['all_feature']               =  DB::table('product_category_feature')->where(array('status'=>1,'category_id'=> $data['fetch_product']->id))->orderBy('sort_order','ASC')->get();
+
+        $data['page_title']             = $data['fetch_product']->meta_title;
+        $data['metaTitle'] 			    = $data['fetch_product']->meta_title;
+   		$data['metaKeyword'] 		    = $data['fetch_product']->meta_keyword;
+   		$data['metaDescription'] 	    = $data['fetch_product']->meta_description;
+        $data['noImage']                = $this->noImage;
+
+        return view('frontend.product-detail',$data);
+    }
 
 
     function lifeAtCosmo(Request $request){
@@ -226,13 +238,14 @@ class Frontend extends Controller
              ->orderBy('publish_date','DESC')->get();
 
 			if($all_blogs)
-				{
+				{   echo "<ul class='list-group'>";
 					foreach ($all_blogs as  $blogs) {
 
 						$link = url('blog-details/'.$blogs->slug);
-                        echo '<li><a href="'.$link.'">'.$blogs->title.'</span></a></li>';
+                        echo '<li class="list-group-item"><a href="'.$link.'">'.$blogs->title.'</span></a></li>';
 
 					}
+                    echo "</ul>";
 				}
 
 

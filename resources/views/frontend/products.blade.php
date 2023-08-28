@@ -60,7 +60,7 @@
                             <div class="title medium">
                                 <h2><?php echo $productDetails->name ?$productDetails->name:""; ?></h2>
                                 <p><?php echo $productDetails->short_description ?$productDetails->short_description:""; ?></p>
-                                <a href="#" class="btn mt-4">Learn More</a>
+                                <a href="<?php echo url('product-detail/'.$productDetails->slug); ?>" class="btn mt-4">Learn More</a>
                             </div>
                         </div>
                     </div>

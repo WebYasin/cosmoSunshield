@@ -736,7 +736,9 @@ textarea.form-control {
 .title.medium-desp p {
     font-size: 18px;
 }
-
+.title.large-desp p {
+    font-size: 20px;
+}
 .benefit-block .info {
     position: absolute;
     bottom: 0;
@@ -1539,3 +1541,229 @@ label.upload-btn svg {
     bottom: 90px;
 }
 /**************Product page css end**********************/
+/**************Solution page css start**********************/
+.icon-box.type2 .icon {
+    background: #2A367E;
+    border: none;
+}
+
+.icon-box.type2 h5 {
+    font-size: 16px;
+    font-family: 'Gilroy-Medium';
+}
+.icon-box.type2.red .icon {
+    background: #ED2C3F;
+}
+.cta-box {
+    background: #F2F4FC;
+    padding: 100px 140px;
+}
+
+.cta-box h3 {
+    font-size: 50px;
+    line-height: 59px;
+}
+.cta-box .btn {
+    margin-top: 20px;
+}
+.cta-box.red {
+    background: #ED2C3F;
+    color: #fff;
+}
+.icon-box.type2 {
+    width: 230px;
+}
+.theme-tab-panel {
+    background: rgb(39 39 39 / 65%);
+    border-radius: 50px;
+    padding: 10px;
+    column-gap: 10px;
+}
+
+.theme-tab-panel .nav-link {
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    min-width: 160px;
+    color: #fff;
+}
+
+.theme-tab-panel .nav-link.active {
+    background: #fff;
+}
+.theme-tab-panel .nav-link.active span {
+    background: linear-gradient(90.43deg, #2C347F -3.94%, #EE2D3E 115.32%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+.video-img-box.mini img {
+    height: 212px;
+    object-fit: cover;
+}
+
+.video-btn.small svg {
+    width: 50px;
+}
+/**************Solution page css end**********************/
+/**************Product page css start**********************/
+.blog-block.type2.hover a.link {
+    opacity: 0;
+    visibility: hidden;
+}
+.blog-block.type2.hover {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.blog-block.type2.hover:hover {
+    box-shadow: 0px 0px 30px 0px #0000001A;
+}
+
+.blog-block.type2.hover:hover a.link {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blog-block.type2.hover h3 a {
+    color: #272727;
+}
+.blog-block.type2.hover .img-box img {
+    height: 295px;
+}
+.float-title .float-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 10;
+}
+.float-title .float-container h2 {
+    font-size: 60px;
+    line-height: 70px;
+}
+.full-image.overlay:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000061;
+}
+
+.full-image.overlay .float-container h2 {
+    color: #fff;
+}
+.full-image.bottom-gradient.float-title.overlay:before {
+    z-index: 20;
+    height: 30%;
+}
+.twentytwenty-before-label,.twentytwenty-after-label {display: none;}
+.before-after-btn-section {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0;
+    z-index: 10;
+}
+
+.before-after-btn-section .image-tag {
+    display: inline-block;
+    background: #fff;
+    font-family: Gilroy-Semibold;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 10px 40px;
+    border-radius: 50px;
+    width: 160px;
+}
+.resource-box {
+    background: #EDD3D6;
+    padding: 50px;
+}
+.download-block {
+    padding: 25px 50px;
+    text-align: center;
+    font-family: Gilroy-Semibold;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0em;
+}
+
+.download-block img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.download-block svg {
+    width: 22px;
+    color: #ED2C3F;
+}
+
+.download-block a {
+    text-decoration: none;
+}
+.benefit-slider-section {
+    width: calc(100% + 100px);
+    margin-bottom: -25%;
+}
+.benefit-sliders .benefit-block {
+    padding: 40px 30px;
+    box-shadow: 0px 0px 30px 0px #0000001A;
+    margin: 30px 10px;
+    height: 260px;
+}
+/**************Product page css end**********************/
+
+
+/* search box  */
+
+.search_input {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0 0 0 / 90%);
+    left: 0;
+    top: 0;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+.search_input input{
+    background: transparent !important;
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 0;
+    padding: 20px;
+    font-size: 24px;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+.search_input button {
+    border: none;
+    color: #fff;
+    background: transparent !important;
+    font-size: 26px;
+}
+.search_input .close_search {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 40px;
+}
+div#searchResult {
+    position: absolute;
+    width: 75%;
+    transform: translateY(80px);
+}
+div#searchResult a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    padding: 6px;
+    display: block;
+}

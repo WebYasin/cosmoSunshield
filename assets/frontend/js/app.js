@@ -49,10 +49,10 @@ jQuery(document).ready(function($){
       },
       breakpoints: {
         0: {
-          slidesPerView: 1,
+          slidesPerView: 2,
         },
         600: {
-          slidesPerView: 2,
+          slidesPerView: 4,
         },
         900: {
           slidesPerView: 4,
@@ -74,6 +74,20 @@ jQuery(document).ready(function($){
     myModalAlternative2.addEventListener('hidden.bs.modal', event => {
       $("#videoPopup iframe").attr("src",``)
     })
+
+    //HTML Video Popup
+    const myModalVideo = new bootstrap.Modal('#video-popup-2')
+    const myModalVideo2 = document.getElementById('video-popup-2')
+    $(".html-popup-video-btn").click(function(){
+      let videoId = $(this).attr("data")
+      $("#video-popup-2 video").attr("src",`${videoId}`)
+      myModalVideo.show()
+    })
+
+    myModalVideo2.addEventListener('hidden.bs.modal', event => {
+      $("#video-popup-2 video").attr("src",'')
+    })
+
 
     //Youtube Video Btn
     $(".youtube-video-btn, .video-my-btn").click(function(){
@@ -145,12 +159,66 @@ jQuery(document).ready(function($){
       }
     });
 
+    //Sub Product Slider
+    var subProductSwiper = new Swiper(".sub-product-slider", {
+      loop: true,
+      slidesPerView: 4,
+      autoplay: true,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".product-next-2",
+        prevEl: ".product-prev-2",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1120: {
+          slidesPerView: 4,
+        },
+      }
+    });
+
+    //Benefit Slider
+    var benefitSwiper = new Swiper(".benefit-sliders", {
+      loop: true,
+      slidesPerView: 4,
+      autoplay: true,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: ".product-next-2",
+        prevEl: ".product-prev-2",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1120: {
+          slidesPerView: 4,
+        },
+      }
+    });
+
+
+
     //Men Toggle
     $(".menu-toggle").click(function(){
       $("header .navigation").toggleClass("open")
     })
 
-    $(document).on('keyup',"#search",function(){
+    $(document).on('keyup',"#keyword",function(){
       let search = $(this).val();
       var base = $('#base').data('base');
       if(search)
@@ -178,7 +246,4 @@ jQuery(document).ready(function($){
           $('#searchingData').addClass('d-none');
       }
   })
-
-
-
-    })
+})
