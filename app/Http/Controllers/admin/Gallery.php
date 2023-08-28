@@ -40,12 +40,14 @@ class Gallery extends Controller
             $data['image']              =  $row->image;
             $data['sort_order']         =  $row->sort_order;
             $data['status']             =  $row->status;
+            $data['feature']            =  $row->feature;
         } else {
             $data['page_title']         = 'Add Gallery';
             $data['form_action']        = 'admin/add_gallery';
             $data['image']              = '';
             $data['sort_order']         = '';
             $data['status']             = '';
+            $data['feature']            = '';
         }
         if ($request->getMethod() == 'POST') {
             $rules = [
@@ -58,7 +60,8 @@ class Gallery extends Controller
             $save = array();
             $save['sort_order']         =  $request->input('sort_order');
             $save['status']             =  $request->input('status');
-            $save['type']              =  1;
+            $save['type']               =  1;
+            $save['feature']            =  $request->input('feature');
 
 
             if (!empty($request->image)) {
@@ -124,18 +127,22 @@ class Gallery extends Controller
             $data['form_action']        = 'admin/add_video_gallery/' . $id;
             $row                        =  GalleryModel::firstWhere('id', $id);
             $data['image']              =  $row->image;
+            $data['video']              =  $row->video;
             $data['sort_order']         =  $row->sort_order;
+            $data['feature']            =  $row->feature;
             $data['status']             =  $row->status;
         } else {
             $data['page_title']         = 'Add Gallery';
             $data['form_action']        = 'admin/add_video_gallery';
+            $data['video']              = '';
             $data['image']              = '';
             $data['sort_order']         = '';
+            $data['status']         = '';
             $data['status']             = '';
         }
         if ($request->getMethod() == 'POST') {
             $rules = [
-                'image'          => 'image|max:1024',
+                'image'          => 'max:1024',
                 'sort_order'     => 'required',
                 'status'         => 'required',
             ];
@@ -144,6 +151,7 @@ class Gallery extends Controller
             $save = array();
             $save['sort_order']         =  $request->input('sort_order');
             $save['status']             =  $request->input('status');
+            $save['feature']            =  $request->input('feature');
             $save['type']               =  2;
 
 
@@ -151,6 +159,11 @@ class Gallery extends Controller
                 $imageName = time() . rand() . '.' . $request->image->extension();
                 $request->image->move('uploads/images', $imageName);
                 $save['image'] = 'uploads/images/' . $imageName;
+            }
+            if (!empty($request->video)) {
+                $imageName = time() . rand() . '.' . $request->video->extension();
+                $request->video->move('uploads/images', $imageName);
+                $save['video'] = 'uploads/images/' . $imageName;
             }
 
             if ($id) {

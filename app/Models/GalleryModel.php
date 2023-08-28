@@ -10,6 +10,7 @@ class GalleryModel extends Model
     use HasFactory;
     protected $fillable = [
         'image',
+        'video',
         'sort_order',
         'status',
         'type',

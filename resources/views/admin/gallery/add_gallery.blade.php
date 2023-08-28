@@ -63,6 +63,12 @@
                                 </div>
                             </div>
 
+                            <div class="form-group ">
+                        <label class="col-sm-2 control-label" for="input-username">Feature</label>
+                        <div class="col-sm-10">
+                            <input type="checkbox" name="feature" value="1" placeholder="" class="form-control" <?php echo $feature && $feature == 1 ? 'checked':''?> />
+                        </div>
+                    </div>
 
                             <div class="form-group required">
                                 <label class="col-sm-2 control-label" for="input-status">Status</label>

@@ -38,7 +38,7 @@
                             <thead>
                                 <tr>
                                 <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
-                                    <td class="text-left">Video</td>
+                                    <td class="text-left">Video Thumbnail</td>
                                     <td class="text-left">Sort Order</td>
                                     <td class="text-left">Status</td>
                                     <td class="text-left">Action</td>

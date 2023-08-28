@@ -147,6 +147,34 @@ class Frontend extends Controller
 
         return view('frontend.solutions',$data);
     }
+    function videos(Request $request){
+        $path = $request->path();
+        $data['fetch_banner']           = DB::table('front_menu')->where([['status',1],['link',$path]])->first();
+        $data['all_gallery']            = DB::table('gallery')->where([['status',1],['type',2]])->orderBy('sort_order','ASC')->get();
+        $data['feature_video']          = DB::table('gallery')->where(array('status'=>1,'feature'=>1,'type'=>2))->first();
+        $data['page_title']             = $data['fetch_banner']->metaTitle;
+        $data['metaTitle'] 			    = $data['fetch_banner']->metaTitle;
+   		$data['metaKeyword'] 		    = $data['fetch_banner']->metaKeyword;
+   		$data['metaDescription'] 	    = $data['fetch_banner']->metaDescription;
+        $data['noImage']                = $this->noImage;
+
+        return view('frontend.videos',$data);
+    }
+
+    function gallery(Request $request){
+        $path = $request->path();
+        $data['fetch_banner']           = DB::table('front_menu')->where([['status',1],['link',$path]])->first();
+        $data['all_gallery']            = DB::table('gallery')->where([['status',1],['type',1]])->orderBy('sort_order','ASC')->get();
+        $data['feature_video']          = DB::table('gallery')->where(array('status'=>1,'feature'=>1,'type'=>1))->first();
+        $data['page_title']             = $data['fetch_banner']->metaTitle;
+        $data['metaTitle'] 			    = $data['fetch_banner']->metaTitle;
+   		$data['metaKeyword'] 		    = $data['fetch_banner']->metaKeyword;
+   		$data['metaDescription'] 	    = $data['fetch_banner']->metaDescription;
+        $data['noImage']                = $this->noImage;
+
+        return view('frontend.gallery',$data);
+    }
+
     function productDetails(Request $request,$path){
         $data['fetch_product']          =  DB::table('product_category')->where([['status',1],['slug',$path]])->first();
         $data['all_feature']            =  DB::table('product_category_feature')->where(array('status'=>1,'category_id'=> $data['fetch_product']->id))->orderBy('sort_order','ASC')->get();

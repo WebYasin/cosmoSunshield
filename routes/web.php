@@ -51,6 +51,8 @@ Route::get('quality-assurance', [Frontend::class,'qualityAssurance']);
 Route::get('sustainability', [Frontend::class,'sustainability']);
 Route::get('join-our-dealer-network', [Frontend::class,'joinDealerNetwork']);
 Route::get('solutions', [Frontend::class,'solutions']);
+Route::get('videos', [Frontend::class,'videos']);
+Route::get('gallery', [Frontend::class,'gallery']);
 Route::get('products', [Frontend::class,'Product']);
 Route::get('product-detail/{id}', [Frontend::class,'productDetails']);
 

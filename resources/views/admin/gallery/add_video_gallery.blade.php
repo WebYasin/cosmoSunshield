@@ -42,13 +42,26 @@
                     <div class="tab-content">
                         <div id="tab-general" class="tab-pane active">
                             <div class="form-group ">
-                                <label class="col-sm-2 control-label" for="input-image">Image</label>
+                                <label class="col-sm-2 control-label" for="input-image">Video Thumbnail </label>
                                 <div class="col-sm-10">
                                     <?php if (@$image) : ?>
                                         <img src="<?php echo url($image); ?>" width="100" height="100">
                                     <?php endif ?>
                                     <input type="file" name="image" id="input-image" class="form-control" />
                                     @error('image')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="col-sm-2 control-label" for="input-image">Video</label>
+                                <div class="col-sm-10">
+                                    <?php if (@$video) : ?>
+                                        <a href="<?php echo url($video); ?>" target="_blank"><i class="fa fa-file fa-2x" aria-hidden="true"></i></a>
+
+                                    <?php endif ?>
+                                    <input type="file" name="video" id="input-image" class="form-control" />
+                                    @error('video')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -62,6 +75,12 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group ">
+                        <label class="col-sm-2 control-label" for="input-username">Feature</label>
+                        <div class="col-sm-10">
+                            <input type="checkbox" name="feature" value="1" placeholder="" class="form-control" <?php echo $feature && $feature == 1 ? 'checked':''?> />
+                        </div>
+                    </div>
 
 
                             <div class="form-group required">
